@@ -10,20 +10,24 @@ clone your project
 git clone <url>
 ```
 
-install nginx
+# install nginx
 ```
 sudp apt install nginx
 ```
-
-```
-pip3 install gunicorn
-```
-
 Now, a demo html will be served.
 
-Install supervisor 
+
+
+
+
+# Install supervisor 
 ```
 sudo apt install supervisor
+```
+
+# Install gunicorn
+```
+pip3 install gunicorn
 ```
 
 ```
