@@ -20,12 +20,12 @@ Now, a demo html will be served.
 
 
 
-# Install supervisor 
+# Install supervisor and gunicorn
 ```
 sudo apt install supervisor
 ```
+Create a venv and activate it
 
-# Install gunicorn
 ```
 pip3 install gunicorn
 ```
@@ -42,7 +42,16 @@ sudo nano gunicorn.conf
 
 Enter this:
 ```
-command
+[program:gunicorn]
+directory=/home/**<username>**/elevate
+command=/home/<username>/<env_name>/bin/gunicorn --workers 3 --bind unix:/home/<username>/elevate/app.sock elevate.wsgi:application  
+autostart=true
+autorestart=true
+stderr_logfile=/var/log/gunicorn/gunicorn.err.log
+stdout_logfile=/var/log/gunicorn/gunicorn.out.log
+
+[group:guni]
+programs:gunicorn
 ```
 
 Make log directory
@@ -77,8 +86,18 @@ sudo nano django.conf
 ```
 
 enter this:
-```
-content
+``` 
+server{
+
+	listen 80;
+	server_name ;
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/<username>/elevate/app.sock;
+	}
+
+}
 ```
 
 Test
