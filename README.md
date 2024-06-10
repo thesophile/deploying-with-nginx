@@ -12,7 +12,7 @@ git clone <url>
 
 # install nginx
 ```
-sudp apt install nginx
+sudo apt install nginx
 ```
 Now, a demo html will be served.
 
