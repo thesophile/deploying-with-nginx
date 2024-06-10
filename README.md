@@ -52,8 +52,8 @@ Enter this:
 
 ```
 [program:gunicorn]
-directory=/home/YOUR_USERNAME/elevate 
-command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/elevate/app.sock elevate.wsgi:application  
+directory=/home/YOUR_USERNAME/YOUR_PROJECT_NAME 
+command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock elevate.wsgi:application  
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/gunicorn/gunicorn.err.log
@@ -62,6 +62,8 @@ stdout_logfile=/var/log/gunicorn/gunicorn.out.log
 [group:guni]
 programs:gunicorn
 ```
+> [!IMPORTANT]
+> Replace YOUR_USERNAME and YOUR_ENV_NAME with your actual username and virtual env name
 
 Make log directory
 
