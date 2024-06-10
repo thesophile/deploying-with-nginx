@@ -50,10 +50,10 @@ sudo nano gunicorn.conf
 
 Enter this:
 
-<pre>
+```
 [program:gunicorn]
-directory=/home/<b>username</b>/elevate ![#f03c15](https://placehold.co/15x15/f03c15/f03c15.png)
-command=/home/<b>username</b>/<b>env_name</b>/bin/gunicorn --workers 3 --bind unix:/home/<b>username</b>/elevate/app.sock elevate.wsgi:application  
+directory=/home/YOUR_USERNAME/elevate 
+command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/elevate/app.sock elevate.wsgi:application  
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/gunicorn/gunicorn.err.log
@@ -61,7 +61,7 @@ stdout_logfile=/var/log/gunicorn/gunicorn.out.log
 
 [group:guni]
 programs:gunicorn
-</pre>
+```
 
 Make log directory
 
