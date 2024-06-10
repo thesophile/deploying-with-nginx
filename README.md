@@ -53,7 +53,7 @@ Enter this:
 ```
 [program:gunicorn]
 directory=/home/YOUR_USERNAME/YOUR_PROJECT_NAME 
-command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock elevate.wsgi:application  
+command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock YOUR_PROJECT_NAME.wsgi:application  
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/gunicorn/gunicorn.err.log
