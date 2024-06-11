@@ -25,21 +25,31 @@ Now, a demo html will be served.
 
 # Install supervisor and gunicorn
 
+install supervisor
+
 ```
 sudo apt install supervisor
 ```
 
 Create a venv and activate it
 
+Install django
+
+```
+pip3 install django
+```
+
+install gunicorn
+
 ```
 pip3 install gunicorn
 ```
 
+create a gunicorn conf file
+
 ```
 cd /etc/supervisor/conf.d/
 ```
-
-create a gunicorn conf file
 
 ```
 sudo touch gunicorn.conf
