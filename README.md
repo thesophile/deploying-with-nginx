@@ -106,11 +106,11 @@ enter this:
 server{
 
 	listen 80;
-	server_name ;
+	server_name YOUR_SERVER_NAME;
 
 	location / {
 		include proxy_params;
-		proxy_pass http://unix:/home/<b>username</b>/elevate/app.sock;
+		proxy_pass http://unix:/home/YOUR _USERNAME/YOUR_PROJECT_NAME/app.sock;
 	}
 
 }
