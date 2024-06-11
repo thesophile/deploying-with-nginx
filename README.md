@@ -150,7 +150,7 @@ sudo systemctl restart supervisor
 Restart nginx
 
 ```
-sudo systemctk restart nginx
+sudo systemctl restart nginx
 ```
 
 
