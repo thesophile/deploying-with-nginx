@@ -95,7 +95,7 @@ change user from www-data to root
 make a django.conf folder in sites-available
 
 ```
-sudo nano /etc/sites-available
+cd /etc/nginx/sites-available
 sudo touch django.conf
 sudo nano django.conf
 ```
