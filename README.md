@@ -110,7 +110,7 @@ server{
 
 	location / {
 		include proxy_params;
-		proxy_pass http://unix:/home/YOUR _USERNAME/YOUR_PROJECT_NAME/app.sock;
+		proxy_pass http://unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock;
 	}
 
 }
