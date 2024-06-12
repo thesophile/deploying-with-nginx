@@ -132,19 +132,10 @@ Test
 sudo nginx -t
 ```
 
-Run
+copy django.conf to sites-enabled
 
 ```
 sudo ln django.conf /etc/nginx/sites-enabled
-sudo service nginx restart
-````
-
-## Additional
-
-Restart supervisor
-
-```
-sudo systemctl restart supervisor
 ```
 
 Restart nginx
@@ -152,6 +143,13 @@ Restart nginx
 ```
 sudo systemctl restart nginx
 ```
+
+Restart supervisor
+
+```
+sudo systemctl restart supervisor
+```
+
 
 
  
