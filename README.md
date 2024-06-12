@@ -11,7 +11,7 @@ clone your project
 git clone <url>
 ```
 
-# install nginx
+## install nginx
 
 ```
 sudo apt install nginx
@@ -23,7 +23,7 @@ Now, a demo html will be served.
 
 
 
-# Install supervisor and gunicorn
+## Install supervisor and gunicorn
 
 install supervisor
 
