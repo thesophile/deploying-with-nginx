@@ -201,11 +201,13 @@ location /static/ {
     }
 ```
 
-Enable the configuration by creating a symlink:
+Now you can restart nginx
 
 ```
-sudo ln -s /etc/nginx/sites-available/django.conf /etc/nginx/sites-enabled/
+sudo systemctl restart nginx
 ```
+
+
  
 
 
