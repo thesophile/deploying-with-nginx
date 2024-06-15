@@ -150,6 +150,19 @@ Restart supervisor
 sudo systemctl restart supervisor
 ```
 
+Now, your website should be served by nginx
+
+## Static files
+If you have static files, you have to collect them to a convenient location for nginx to access and define that path in django.conf
+
+Usually static files are stored in /var/www/static. Create it using mkdir
+
+```
+sudo mkdir /var/www/static
+```
+
+Now since we are going to write to this directory as a user, we have to grant necessary permissions:
+
 
 
  
