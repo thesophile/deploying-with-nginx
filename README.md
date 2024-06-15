@@ -189,7 +189,17 @@ Then collect it:
 python3 manage.py collectstatic
 ```
 Now, the static files are moved to /var/www/static
-Next, tell django to serve these:
+Next, tell django to serve these by editing the django.conf
+
+```
+sudo nano /etc/nginx/sites-available/django.conf
+```
+
+```
+location /static/ {
+        alias /var/www/static/;  # Adjust to your STATIC_ROOT
+    }
+```
 
 
  
