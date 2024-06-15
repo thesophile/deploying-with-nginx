@@ -194,7 +194,7 @@ Next, tell django to serve these by editing the django.conf
 ```
 sudo nano /etc/nginx/sites-available/django.conf
 ```
-
+Add this:
 ```
 location /static/ {
         alias /var/www/static/;  # Adjust to your STATIC_ROOT
