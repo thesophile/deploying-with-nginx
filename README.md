@@ -168,13 +168,31 @@ sudo chown -R USERNAME:root /var/www/static
 ```
 
 Collect static:
+Usually static files are dispersed in different locations across your django project. You have to collect all of them to a single location for nginx to serve.
+
+First tell django which are your static 
+files. Then specify to which folder your files should be collected to
+
+Your django project's settings.py should contain:
+```
+STATIC_URL = 'static/'
+
+STATICFILES_DIRS = [
+    BASE_DIR / "manim" / "static" / "css",
+]
+
+STATIC_ROOT = '/var/www/static/'
+```
+Then collect it:
 
 ```
 python3 manage.py collectstatic
 ```
+Now, the static files are moved to /var/www/static
+Next, tell django to serve these:
+
+
  
-> [!IMPORTANT]
-> Static files should be defined inside settings.py
 
 
 
