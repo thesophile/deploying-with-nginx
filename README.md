@@ -163,10 +163,18 @@ sudo mkdir /var/www/static
 
 Now since we are going to write to this directory as a user, we have to grant necessary permissions:
 
+```
+sudo chown -R USERNAME:root /var/www/static
+```
 
+Collect static:
 
+```
+python3 manage.py collectstatic
+```
  
-
+> [!IMPORTANT]
+> Static files should be defined inside settings.py
 
 
 
