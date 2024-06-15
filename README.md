@@ -201,7 +201,11 @@ location /static/ {
     }
 ```
 
+Enable the configuration by creating a symlink:
 
+```
+sudo ln -s /etc/nginx/sites-available/django.conf /etc/nginx/sites-enabled/
+```
  
 
 
