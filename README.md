@@ -209,6 +209,32 @@ sudo systemctl restart nginx
 
 
  
+```
+server{
+        server_name cloudpy.online www.cloudpy.online;
 
+        listen 443 ssl;
+        ssl_certificate /etc/letsencrypt/live/cloudpy.online/fullchain.pem;
+        ssl_certificate_key /etc/letsencrypt/live/cloudpy.online/privkey.pem;
+        include /etc/letsencrypt/options-ssl-nginx.conf;
+        ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem;
+
+        location / {
+                include proxy_params;
+                proxy_pass http://unix:/home/ubuntu/CloudPy/app.sock;
+        }
+
+        location /static/ {
+                alias /var/www/static/;
+                expires 7d;
+        }
+}
+
+server {
+    listen 80;
+    server_name cloudpy.online www.cloudpy.online;
+    return 301 https://$host$request_uri;
+}
+```
 
 
