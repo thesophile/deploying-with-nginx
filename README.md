@@ -1,4 +1,6 @@
-# deploying-with-nginx
+# Deploying with nginx
+
+## Basic setup
 
 ```
 sudo apt update
@@ -11,25 +13,24 @@ clone your project
 git clone <url>
 ```
 
-## install nginx
+### install nginx
 
 ```
 sudo apt install nginx
 ```
 
-Now, a demo html will be served.
+>[!Tip]
+>Now, a demo html will be served.
 
 
 
-
-
-## Install supervisor and gunicorn
-
-install supervisor
+### install supervisor
 
 ```
 sudo apt install supervisor
 ```
+
+### install and configure gunicorn
 
 Create a venv and activate it
 
@@ -94,13 +95,15 @@ check status
 sudo supervisorctl status
 ```
 
-change nginx conf
+### configure nginx
 
+<!--
 ```
 sudo nano /etc/nginx/nginx.conf
 ```
 
 change user from www-data to root
+-->
 
 make a django.conf folder in sites-available
 
@@ -243,7 +246,8 @@ server{
 
 Use [certbot](https://certbot.eff.org/instructions?ws=nginx&os=debianbuster)
 
-Tip: Delete the default file (Next to django.conf) before running the `sudo certbot --nginx` command because, it can mistakenly write to default instead of to django.conf.  
+>[!WARNING]
+> Delete the default file (Next to django.conf) before running the `sudo certbot --nginx` command because, it can mistakenly write to default instead of to django.conf.  
 
 Make sure your django.conf looks something like this:
  
