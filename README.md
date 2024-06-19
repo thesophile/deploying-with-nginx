@@ -211,7 +211,17 @@ sudo systemctl restart nginx
 1. Register for a Domain at somewhere like [Hostinger.in](https://www.hostinger.in/)
 
 2. Go to the panel and add an A record pointing to the IP address of your server
+
+![image](https://github.com/thesophile/deploying-with-nginx/assets/90457368/fb6f605a-e2ec-4d4b-8e5a-57f684d41b3b)
+
+![image](https://github.com/thesophile/deploying-with-nginx/assets/90457368/5c06df3a-3801-4cd5-9c82-4d51f34dd35d)
+
+If you have to redirect www requests, add a CNAME record too:
+
+![image](https://github.com/thesophile/deploying-with-nginx/assets/90457368/dff56bd0-0747-43e8-98d8-a3ce180b7d82)
+
  
+
 
 Edit django.conf:
 
