@@ -206,10 +206,34 @@ Now you can restart nginx
 ```
 sudo systemctl restart nginx
 ```
+## Domain Name
 
-To acquire SSL certificate (https)
+1. Register for a Domain at somewhere like [Hostinger.in](https://www.hostinger.in/)
 
-Use certbot
+2. Go to the panel and add an A record pointing to the IP address of your server
+ 
+
+Edit django.conf:
+
+``` 
+server{
+
+	listen 80;
+	server_name DOMAIN.COM WWW.DOMAIN.COM ;
+
+	location / {
+		include proxy_params;
+		proxy_pass http://unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock;
+	}
+
+}
+```
+
+## To acquire SSL certificate (https)
+
+Use [certbot](https://certbot.eff.org/instructions?ws=nginx&os=debianbuster)
+
+Tip: Delete the default file (Next to django.conf) before running the `sudo certbot --nginx` command because, it can mistakenly write to default instead of to django.conf.  
 
 Make sure your django.conf looks something like this:
  
