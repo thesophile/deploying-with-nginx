@@ -207,7 +207,11 @@ Now you can restart nginx
 sudo systemctl restart nginx
 ```
 
+To acquire SSL certificate (https)
 
+Use certbot
+
+Make sure your django.conf looks something like this:
  
 ```
 server{
@@ -221,7 +225,7 @@ server{
 
         location / {
                 include proxy_params;
-                proxy_pass http://unix:/home/ubuntu/CloudPy/app.sock;
+                proxy_pass http://unix:/home/admin/CloudPy/app.sock;
         }
 
         location /static/ {
