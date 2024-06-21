@@ -209,6 +209,22 @@ Now you can restart nginx
 ```
 sudo systemctl restart nginx
 ```
+## Media Files
+To Display media files, for example files contained in a folder called 'media' directly inside the project directory, do as follows:
+
+1. Add this to your settings.py of your project:
+```
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+```   
+2. Add this to your django.conf:
+```
+        location /media/ {
+        alias /home/admin/CloudPy/media/;
+        }
+
+``` 
+
 ## Domain Name
 
 1. Register for a Domain at somewhere like [Hostinger.in](https://www.hostinger.in/)
