@@ -47,6 +47,12 @@ sudo apt install supervisor
 ### install and configure gunicorn
 
 Create a venv and activate it
+```
+python3 -m venv myenv
+```
+```
+source myenv/bin/activate
+```
 
 Install django
 
