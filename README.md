@@ -10,8 +10,14 @@ sudo apt upgrade
 clone your project
 
 ```
-git clone <url>
+git clone <repository_url>
 ```
+> [!TIP]
+> to clone from a particular branch, use
+> ```
+> git clone -b <branch_name> <repository_url>
+> ```
+
 
 ### install nginx
 
