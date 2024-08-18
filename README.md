@@ -2,10 +2,18 @@
 
 ## Basic setup
 
+
+Update and upgrade  
 ```
 sudo apt update
 sudo apt upgrade
 ```
+
+> if you don't have git installed:
+> ```
+> sudo apt install git
+> ```
+> If that's not working, check your outbound rules and permit outbound traffic 
 
 clone your project
 
