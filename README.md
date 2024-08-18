@@ -196,7 +196,8 @@ sudo mkdir /var/www/static
 Now since we are going to write to this directory as a user, we have to grant necessary permissions:
 
 ```
-sudo chown -R USERNAME:root /var/www/static
+sudo chown -R your_user:your_user_group /var/www/static
+sudo chmod -R 755 /var/www/static
 ```
 
 Collect static:
