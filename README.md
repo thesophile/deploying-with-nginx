@@ -84,7 +84,7 @@ Enter this:
 ```
 [program:gunicorn]
 directory=/home/YOUR_USERNAME/YOUR_PROJECT_NAME 
-command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock PROJECT_NAME.wsgi:application  
+command=/home/YOUR_USERNAME/YOUR_ENV_NAME/bin/gunicorn --workers 3 --bind unix:/home/YOUR_USERNAME/YOUR_PROJECT_NAME/app.sock WSGI_PROJECT_NAME.wsgi:application  
 autostart=true
 autorestart=true
 stderr_logfile=/var/log/gunicorn/gunicorn.err.log
@@ -94,9 +94,12 @@ stdout_logfile=/var/log/gunicorn/gunicorn.out.log
 programs:gunicorn
 ```
 > [!IMPORTANT]
-> Replace YOUR_USERNAME and YOUR_ENV_NAME with your actual username and virtual env name
-> YOUR_PROJECT_NAME : The File name you have given to the Github project. ex: CloudPy
-> PROJECT_NAME : You can find this in project/wsgi.py ex: cloudpy
+> Replace YOUR_USERNAME and YOUR_ENV_NAME with your actual username and virtual env name.
+> 
+> YOUR_PROJECT_NAME : The File name you have given to the Github project.
+> 
+> WSGI_PROJECT_NAME : You can find this in project/wsgi.py
+>  
 > Both of this can be different.
 
 Make log directory
