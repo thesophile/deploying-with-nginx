@@ -149,6 +149,9 @@ server{
 }
 ```
 
+> [!TIP]
+> YOUR_SERVER_NAME is your IP address (like `192.168.1.1`) or your registered domain name (like `www.example.com`)
+
 Test
 
 ```
@@ -173,7 +176,7 @@ Restart supervisor
 sudo systemctl restart supervisor
 ```
 
-Now, your website should be served by nginx
+Now, your website should be served by nginx at `http://<Server_IP_address>/`
 
 ## Static files
 If you have static files, you have to collect them to a convenient location for nginx to access and define that path in django.conf
