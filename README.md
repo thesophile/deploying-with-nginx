@@ -293,7 +293,16 @@ server{
 Use [certbot](https://certbot.eff.org/instructions?ws=nginx&os=debianbuster)
 
 >[!WARNING]
-> Delete the default file (Next to django.conf) before running the `sudo certbot --nginx` command because, it can mistakenly write to default instead of to django.conf.  
+> Delete the default file (Next to django.conf) before running the `sudo certbot --nginx` command because, it can mistakenly write to default instead of to django.conf.
+>
+>When deleting default, check if there are broken symlinks
+>```
+>ls -l /etc/nginx/sites-enabled/
+>```
+>and delete them
+>```
+>
+>```
 
 Make sure your django.conf looks something like this:
  
