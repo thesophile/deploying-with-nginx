@@ -301,7 +301,7 @@ Use [certbot](https://certbot.eff.org/instructions?ws=nginx&os=debianbuster)
 >```
 >and delete them
 >```
->
+>sudo rm /etc/nginx/sites-enabled/default
 >```
 
 Make sure your django.conf looks something like this:
