@@ -348,6 +348,29 @@ sudo tail -f /var/log/gunicorn/gunicorn.err.log
 ```
 
 If it is because of a dependency not installed, install it and restart the gunicorn process.
+```
+sudo supervisorctl restart gunicorn
+```
+If that doesn't work, delete the gunicorn.conf
+```
+sudo rm gunicorn.conf
+```
+create it again
+```
+sudo touch gunicorn.conf
+sudo nano gunicorn.conf
+```
+reread and update
+```
+sudo supervisorctl reread
+sudo supervisorctl update
+```
+and then restart again
+```
+sudo supervisorctl restart gunicorn
+```
+
+
 
 
  
