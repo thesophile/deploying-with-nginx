@@ -90,8 +90,6 @@ autorestart=true
 stderr_logfile=/var/log/gunicorn/gunicorn.err.log
 stdout_logfile=/var/log/gunicorn/gunicorn.out.log
 
-[group:guni]
-programs:gunicorn
 ```
 > [!IMPORTANT]
 > Replace YOUR_USERNAME and YOUR_ENV_NAME with your actual username and virtual env name.
@@ -335,7 +333,25 @@ server {
 ```
 
 ## Additional packages
-Install additional packages
+Install dependencies
+```
+pip install -r requirements.txt
+```
 
-ex: [docker](https://docs.docker.com/engine/install/debian/#install-using-the-repository)
+## Debug
+
+### Internal server error
+
+Check gunicorn log
+```
+sudo tail -f /var/log/gunicorn/gunicorn.err.log
+```
+
+If it is because of a dependency not installed, install it and restart the gunicorn process.
+
+
+ 
+
+
+ 
 
